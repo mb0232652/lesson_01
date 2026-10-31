@@ -1,5 +1,4 @@
 import math
-def sguare ():
- x =  float(input("Введите значение стороны квадрата:"))
+def sguare (x):
  return math.ceil (x * x)
-print(sguare())
+print(sguare(5))
