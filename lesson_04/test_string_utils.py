@@ -1,4 +1,3 @@
-
 from string_utils import StringUtils 
 import pytest
 
@@ -26,7 +25,12 @@ def test_capitaleze_positive_цифры_текст():
 def test_capitaleze_positive_кириллица():
 
     string_utils = StringUtils()
-    assert string_utils.capitalize("привет") == "Привет" 
+    assert string_utils.capitalize("привет") == "Привет"
+
+def test_capitaleze_negative_пустая_строка():
+
+    string_utils = StringUtils()
+    assert string_utils.capitalize("") == ""     
 
 
 def test_trim_positive_Принимает_на_вход_текст_удаляет_пробелы_в_начале_если_есть():
@@ -78,8 +82,13 @@ def test_delete_symbo_positive_удаляет_заявленный_символ_
     string_utils = StringUtils()
     assert string_utils.delete_symbol("sok", "k") == "so"  
 
+
 def test_delete_symbo_positive_удаляет_заявленный_символ_Pro():
 
     string_utils = StringUtils()
-    assert string_utils.delete_symbol("Pro", "Pro") == ""          
+    assert string_utils.delete_symbol("Pro", "Pro") == ""  
 
+def test_delete_symbo_neganive_в_латинице_буква_к_из_кириллицы():
+
+    string_utils = StringUtils()
+    assert string_utils.delete_symbol("soк", "k") == "soк" 
